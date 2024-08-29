@@ -2,7 +2,7 @@ package todo;
 
 
 
-public class command {
+public class Command {
 
     private String name;
 
@@ -10,7 +10,7 @@ public class command {
 
 
 
-    public command(String name, String arg) {
+    public Command(String name, String arg) {
 
         this.name = name;
 
