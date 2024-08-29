@@ -3,10 +3,11 @@ package todo;
 
 
 import java.io.*;
-
+import java.util.Scanner;
 
 
 public class Main {
+
 
 
 
@@ -14,15 +15,14 @@ public class Main {
 
         CommandAnalyzer ca = new CommandAnalyzer();
 
-//        ActionProvider ap = new ActionProvider();
+        ActionProvider ap = new ActionProvider();
 
-
-
-
+        TaskModel model = new TaskModel();
 
         while (true) {
 
             System.out.print(">");
+
 
             String input = null;
 
@@ -47,18 +47,18 @@ public class Main {
 
 
             Command command = ca.analyze(input);
-//
-//            Action action = ap.createAction(model, command);
-//
-//            if (action == null) {
-//
-//                System.out.println("不正な入力です。");
-//
-//                continue;
-//
-//            }
-//
-//            action.execute();
+
+            Action action = ap.createAction(model, command);
+
+            if (action == null) {
+
+                System.out.println("不正な入力です。");
+
+                continue;
+
+            }
+
+            action.execute();
 
         }
 
